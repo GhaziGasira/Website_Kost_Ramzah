@@ -1,0 +1,494 @@
+/* ==========================================================================
+   STYLE WEBSITE KOST RAMZAH
+   Konsep: Bersih, Hangat, Menenangkan, Ringan (Tanpa Framework / Library Berat)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS (Variabel Desain Global)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Palet Warna Abu Elegan (Slate Charcoal & Minimalist Monochrome) */
+  --bg: #F7F8FA;              /* Latar utama abu lembut (clean architectural off-white grey) */
+  --surface: #FFFFFF;         /* Warna kartu & panel putih murni */
+  --surface-subtle: #EDF0F3;  /* Latar abu terang untuk variasi bagian */
+  --ink: #181C20;             /* Teks utama (deep charcoal obsidian, kontras > 13:1) */
+  --muted: #57606A;           /* Teks sekunder (refined slate grey, kontras > 5:1) */
+  --accent: #2C353F;          /* Warna aksen utama (titanium slate / abu arang elegan) */
+  --accent-hover: #192028;    /* Aksen saat hover / disentuh */
+  --accent-subtle: #E6EAEF;   /* Abu terang elegan untuk badge status */
+  --border: #DFE3E8;          /* Garis batas halus rapi */
+  
+  /* Warna Khusus WhatsApp */
+  --wa-green: #25D366;
+  --wa-green-hover: #1EBE5D;
+  --wa-green-dark: #128C7E;
+
+  /* Tipografi Bawaan Sistem Operasi (0ms Download, 0 Byte Beban) */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Skala Huruf Responsif (Clamp) */
+  --step-small: clamp(0.8125rem, 0.8rem + 0.1vw, 0.875rem);   /* 13px - 14px */
+  --step-body: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);      /* 16px - 17px */
+  --step-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);    /* 18px - 20px */
+  --step-h2: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);          /* 24px - 36px */
+  --step-display: clamp(2rem, 1.3rem + 3.2vw, 3.25rem);       /* 32px - 52px */
+
+  /* Spasi & Jarak */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2.5rem;    /* 40px */
+  --space-2xl: 4rem;     /* 64px */
+
+  /* Sudut Lengkung (Border Radius) Konsisten */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Bayangan Lembut Natural */
+  --shadow-sm: 0 1px 3px rgba(25, 35, 30, 0.05);
+  --shadow-md: 0 4px 16px rgba(25, 35, 30, 0.08);
+  --shadow-lg: 0 10px 30px rgba(25, 35, 30, 0.12);
+
+  /* Transisi Halus (Ringan & Cepat) */
+  --transition: 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET DASAR & AKSESIBILITAS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-body);
+  line-height: 1.6;
+  min-height: 100dvh; /* Khusus Safari iPhone agar pas 1 viewport layar */
+  display: flex;
+  flex-direction: column;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Aksesibilitas: Fokus keyboard terlihat jelas */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Wadah Pembungkus Konten Utama */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* --------------------------------------------------------------------------
+   3. HEADER & NAVBAR (Menempel di Atas / Sticky)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(247, 248, 250, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--transition);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.25rem; /* 68px */
+}
+
+/* Logo Nama Teks Kost Ramzah */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.nav-brand .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: var(--radius-full);
+}
+
+/* Menu Navigasi */
+.nav-menu {
+  display: none; /* Disembunyikan di HP, diaktifkan via hamburger */
+  list-style: none;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--muted);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* Tombol Aksi Langsung di Navbar */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Tombol WhatsApp Hijau */
+.btn-wa-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), transform var(--transition);
+  min-height: 44px; /* Batas nyaman sentuhan HP */
+}
+
+.btn-wa-nav:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-wa-nav svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Tombol Hamburger di HP */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--ink);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* State Hamburger Saat Terbuka */
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menu Dropdown di HP */
+@media (max-width: 767px) {
+  .nav-menu[data-open="true"] {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4.25rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-menu[data-open="true"] .nav-link {
+    font-size: 1.125rem;
+    width: 100%;
+    border-bottom: 1px solid var(--surface-subtle);
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO SECTION (Tampilan Pertama Asimetris & Berkarakter)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+/* Badge Status Kamar Tersedia */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: var(--step-small);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-badge .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: #22C55E; /* Hijau segar */
+}
+
+/* Judul Display Hero */
+.hero-title {
+  font-size: var(--step-display);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+/* Paragraf Pendukung Hero */
+.hero-lead {
+  font-size: var(--step-lead);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 54ch; /* Membatasi panjang kalimat agar nyaman dibaca */
+  margin-bottom: 2rem;
+}
+
+/* Grup Tombol Aksi */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Tombol Utama Chat WhatsApp */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--accent);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(44, 53, 63, 0.25);
+  transition: background-color var(--transition), transform var(--transition);
+  min-height: 48px;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Tombol Sekunder Lihat Kamar */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: background-color var(--transition), border-color var(--transition);
+  min-height: 48px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--surface-subtle);
+  border-color: #CBD5CE;
+}
+
+/* Nilai Tambah / Poin Ketenangan */
+.hero-reassurance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.reassurance-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Kolom Gambar Hero */
+.hero-visual {
+  position: relative;
+}
+
+.hero-image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 3;
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badge Keterangan Foto Hero */
+.hero-image-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(24, 28, 32, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--step-small);
+}
+
+.hero-image-caption span:first-child {
+  font-weight: 600;
+}
+
+.hero-image-caption span:last-child {
+  color: var(--surface-subtle);
+  font-size: 0.8125rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE BREAKPOINTS (Desktop & Tablet)
+   -------------------------------------------------------------------------- */
+/* Tablet & Desktop Kecil (≥ 768px) */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none; /* Tombol hamburger hilang di layar besar */
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr; /* Layout asimetris 2 kolom */
+  }
+
+  .hero-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Desktop Penuh (≥ 1024px) */
+@media (min-width: 1024px) {
+  .hero-section {
+    padding-top: 4.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4.5rem;
+  }
+}

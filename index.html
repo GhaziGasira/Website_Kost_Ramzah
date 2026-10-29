@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport dengan viewport-fit=cover khusus Safari iPhone & Android -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- SEO & Keterangan Halaman -->
+  <title>Kost Ramzah | Hunian Mahasiswa Nyaman, Bersih & Tenang</title>
+  <meta name="description" content="Kost Ramzah - Hunian kost mahasiswa bersih, nyaman, dan tenang. Dilengkapi kasur, lemari, Wi-Fi kencang, CCTV 24 jam, dapur bersama, dan dibersihkan setiap hari. Chat langsung Bapak Kost via WhatsApp.">
+  <meta name="author" content="Kost Ramzah">
+
+  <!-- Open Graph / Tampilan Berbagi Media Sosial -->
+  <meta property="og:title" content="Kost Ramzah | Hunian Mahasiswa Nyaman, Bersih & Tenang">
+  <meta property="og:description" content="Kost mahasiswa dengan fasilitas lengkap, lingkungan kondusif untuk belajar, dan pembersihan rutin setiap hari. Hubungi Bapak Kost via WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- Hubungkan ke Stylesheet Eksternal -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Skrip Eksternal (Dimuat setelah DOM siap) -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. HEADER & NAVBAR (Menempel di Bagian Atas Halaman)
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="navbar" aria-label="Navigasi Utama">
+        <!-- Logo / Nama Brand Teks Kost Ramzah -->
+        <a href="#beranda" class="nav-brand" aria-label="Kembali ke Beranda Kost Ramzah">
+          KOST RAMZAH<span class="dot" aria-hidden="true"></span>
+        </a>
+
+        <!-- Daftar Menu Navigasi -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#beranda" class="nav-link">Beranda</a></li>
+          <li><a href="#kamar" class="nav-link">Kamar & Harga</a></li>
+          <li><a href="#fasilitas" class="nav-link">Fasilitas</a></li>
+          <li><a href="#galeri" class="nav-link">Galeri</a></li>
+          <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+        </ul>
+
+        <!-- Tombol Aksi di Navbar -->
+        <div class="nav-actions">
+          <!-- Tombol WhatsApp Langsung ke Kontak Bapak Kost -->
+          <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Bapak%20Kost%20Ramzah,%20saya%20tertarik%20dengan%20kamar%20kost%20dan%20ingin%20tanya%20informasi%20survei." 
+             class="btn-wa-nav" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Chat WhatsApp Bapak Kost">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Tanya Kamar</span>
+          </a>
+
+          <!-- Tombol Hamburger untuk Layar HP -->
+          <button class="nav-toggle" 
+                  id="navToggle" 
+                  aria-label="Buka Menu Navigasi" 
+                  aria-expanded="false" 
+                  aria-controls="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         2. HERO SECTION (Kesan Pertama & Identitas Utama Kost Ramzah)
+         ======================================================================== -->
+    <section id="beranda" class="hero-section" aria-labelledby="heroTitle">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Kolom Teks & Informasi (Kiri di Desktop, Atas di Mobile) -->
+          <div class="hero-content">
+            <!-- Badge Status Ketersediaan Kamar -->
+            <div class="hero-badge">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Kamar Tersedia untuk Mahasiswa</span>
+            </div>
+
+            <!-- Judul Display Utama -->
+            <h1 id="heroTitle" class="hero-title">
+              Hunian Mahasiswa Nyaman, Bersih & Tenang di <span>Kost Ramzah</span>
+            </h1>
+
+            <!-- Penjelasan Pendukung yang Lugas -->
+            <p class="hero-lead">
+              Kost khusus mahasiswa dengan fasilitas kamar lengkap, lingkungan belajar yang kondusif, CCTV 24 jam, dan dibersihkan setiap hari oleh pengelola langsung.
+            </p>
+
+            <!-- Tombol Aksi Utama -->
+            <div class="hero-actions">
+              <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Bapak%20Kost%20Ramzah,%20saya%20ingin%20tanya%20ketersediaan%20kamar%20dan%20jadwal%20survei." 
+                 class="btn-primary" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="Hubungi Bapak Kost melalui WhatsApp">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/>
+                </svg>
+                <span>Chat WhatsApp Bapak Kost</span>
+              </a>
+
+              <a href="#kamar" class="btn-secondary">
+                Lihat Detail Kamar
+              </a>
+            </div>
+
+            <!-- Nilai Tambah / Jaminan Ketenangan (Reassurance Points) -->
+            <div class="hero-reassurance">
+              <div class="reassurance-item">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Dibersihkan Tiap Hari</span>
+              </div>
+              <div class="reassurance-item">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Wi-Fi Cepat Kuliah</span>
+              </div>
+              <div class="reassurance-item">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>CCTV 24 Jam Nonstop</span>
+              </div>
+              <div class="reassurance-item">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Langsung Pemilik</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Gambar Hero (Kanan di Desktop) -->
+          <div class="hero-visual">
+            <div class="hero-image-wrap">
+              <img src="images/hero/hero-kost.svg" 
+                   alt="Tampak depan gedung Kost Ramzah yang bersih, terang, dan berpagar aman"
+                   width="800"
+                   height="600"
+                   loading="eager"
+                   fetchpriority="high">
+              <div class="hero-image-caption">
+                <span>Tampak Depan Kost Ramzah</span>
+                <span>Asri & Terawat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder Section berikutnya yang akan kita bangun di Sub-langkah 2, 3, dan 4:
+         - Section #kamar (Detail Kamar & Tarif)
+         - Section #fasilitas (Fasilitas Kamar & Bersama)
+         - Section #galeri (Galeri Foto & Filter Kategori)
+         - Section #lokasi (Alamat, Jarak Kampus, & Peta)
+         - Section #faq (Aturan Kost & Tanya Jawab)
+    -->
+  </main>
+
+</body>
+</html>

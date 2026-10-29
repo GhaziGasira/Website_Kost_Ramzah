@@ -1,0 +1,42 @@
+# ==============================================================================
+# .gitignore untuk Website Kost Ramzah
+# Menjaga repository tetap bersih dan aman dari file binary/alat AI
+# ==============================================================================
+
+# 1. Folder Skill & Ekstensi AI (Wajib di-ignore agar file .exe tidak ikut ter-push)
+.agent/
+.agents/
+.gemini/
+.impeccable/
+.taste-skill/
+skills-lock.json
+
+# 2. File Binary & Eksekusi
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 3. Ketergantungan & Cache Node.js (Jika ada di masa depan)
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 4. File Sampah Sistem Operasi
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# 5. Konfigurasi Editor & IDE Lokal
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 6. File Log & Temporary
+*.log
+tmp/
+temp/
