@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Inisialisasi Scroll Halus untuk Tautan Navigasi
   initSmoothScroll();
+
+  // 3. Inisialisasi Filter Kategori Galeri & Muat Bertahap
+  initGalleryFilter();
+
+  // 4. Inisialisasi Modal Lightbox Foto Layar Penuh
+  initLightbox();
 });
 
 /**
@@ -74,3 +80,114 @@ function initSmoothScroll() {
     });
   });
 }
+
+/**
+ * Mengelola filter kategori galeri foto dan tombol muat bertahap
+ */
+function initGalleryFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.galeri-item');
+  const loadMoreBtn = document.getElementById('loadMoreGallery');
+  let currentFilter = 'all';
+  let isExpanded = false;
+  const initialLimit = 6;
+
+  function updateGalleryDisplay() {
+    let visibleCount = 0;
+    galleryItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+      const matches = (currentFilter === 'all' || category === currentFilter);
+
+      if (matches) {
+        visibleCount++;
+        if (!isExpanded && visibleCount > initialLimit) {
+          item.setAttribute('data-hidden', 'true');
+        } else {
+          item.removeAttribute('data-hidden');
+        }
+      } else {
+        item.setAttribute('data-hidden', 'true');
+      }
+    });
+
+    // Sembunyikan tombol muat lebih banyak jika semua item yang cocok sudah tampil
+    if (loadMoreBtn) {
+      if (visibleCount <= initialLimit || isExpanded) {
+        loadMoreBtn.style.display = 'none';
+      } else {
+        loadMoreBtn.style.display = 'inline-flex';
+      }
+    }
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter') || 'all';
+      isExpanded = false; // Reset pagination saat ganti filter
+      updateGalleryDisplay();
+    });
+  });
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      isExpanded = true;
+      updateGalleryDisplay();
+    });
+  }
+
+  // Tampilan awal
+  updateGalleryDisplay();
+}
+
+/**
+ * Mengelola Lightbox (perbesaran foto layar penuh saat diklik)
+ */
+function initLightbox() {
+  const modal = document.getElementById('lightboxModal');
+  const modalImg = document.getElementById('lightboxImg');
+  const modalTitle = document.getElementById('lightboxTitle');
+  const closeBtn = document.getElementById('lightboxClose');
+  const galleryItems = document.querySelectorAll('.galeri-item');
+
+  if (!modal || !modalImg || !closeBtn) return;
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      const captionEl = item.querySelector('.galeri-caption-overlay span');
+      const captionText = captionEl ? captionEl.textContent : item.getAttribute('data-title');
+
+      if (img) {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || 'Foto Galeri Kost Ramzah';
+        if (modalTitle) {
+          modalTitle.textContent = captionText || '';
+        }
+        modal.setAttribute('data-open', 'true');
+        document.body.style.overflow = 'hidden'; // Kunci scroll layar saat modal aktif
+      }
+    });
+  });
+
+  function closeModal() {
+    modal.removeAttribute('data-open');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.getAttribute('data-open') === 'true') {
+      closeModal();
+    }
+  });
+}
+

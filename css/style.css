@@ -459,7 +459,327 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   5. RESPONSIVE BREAKPOINTS (Desktop & Tablet)
+   6. SECTION HEADERS & SHARED STYLES
+   -------------------------------------------------------------------------- */
+.section-padding {
+  padding: 4rem 1.5rem;
+}
+
+.section-header {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.section-kicker {
+  display: inline-block;
+  font-size: var(--step-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: var(--step-h2);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.section-desc {
+  font-size: var(--step-lead);
+  color: var(--muted);
+  max-width: 58ch;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   7. DAFTAR KAMAR SECTION (#kamar)
+   -------------------------------------------------------------------------- */
+.kamar-section {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.kamar-card {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 1fr;
+  transition: box-shadow var(--transition);
+}
+
+.kamar-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.kamar-visual {
+  position: relative;
+  background-color: var(--surface);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.kamar-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kamar-status-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(24, 28, 32, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  font-size: var(--step-small);
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.kamar-status-badge .dot-live {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--wa-green);
+}
+
+.kamar-body {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kamar-badge-type {
+  display: inline-block;
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+  font-size: var(--step-small);
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+}
+
+.kamar-heading {
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.kamar-overview {
+  color: var(--muted);
+  font-size: var(--step-body);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.kamar-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding: 1.25rem;
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.spec-label {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.spec-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.kamar-pricing-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.kamar-price-num {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.kamar-price-period {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.kamar-price-note {
+  width: 100%;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.kamar-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. FASILITAS KOST SECTION (#fasilitas)
+   -------------------------------------------------------------------------- */
+.fasilitas-section {
+  background-color: var(--bg);
+}
+
+.fasilitas-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 3rem;
+}
+
+.fasilitas-group {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.fasilitas-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--surface-subtle);
+}
+
+.fasilitas-group-title svg {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+}
+
+.fasilitas-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.fasilitas-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.fasilitas-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-subtle);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fasilitas-icon-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fasilitas-text h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.fasilitas-text p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Banner Jaminan Kebersihan Harian */
+.clean-guarantee-banner {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  box-shadow: var(--shadow-md);
+}
+
+.clean-guarantee-content h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.clean-guarantee-content p {
+  color: var(--surface-subtle);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.clean-guarantee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE BREAKPOINTS (Desktop & Tablet)
    -------------------------------------------------------------------------- */
 /* Tablet & Desktop Kecil (≥ 768px) */
 @media (min-width: 768px) {
@@ -478,6 +798,706 @@ button {
   .hero-image-wrap {
     aspect-ratio: 4 / 3;
   }
+
+  .kamar-card {
+    grid-template-columns: 1fr 1.1fr;
+  }
+
+  .kamar-visual {
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    aspect-ratio: auto;
+  }
+
+  .fasilitas-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clean-guarantee-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. GALERI FOTO SECTION (#galeri)
+   -------------------------------------------------------------------------- */
+.galeri-section {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.galeri-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background-color: var(--surface-subtle);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: var(--step-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: 44px;
+}
+
+.filter-btn:hover {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.filter-btn.active {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+}
+
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.galeri-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.galeri-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.galeri-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galeri-item:hover img {
+  transform: scale(1.03);
+}
+
+.galeri-caption-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.75rem 1rem;
+  background: rgba(24, 28, 32, 0.88);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: var(--step-small);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.galeri-item[data-hidden="true"] {
+  display: none;
+}
+
+.galeri-load-more-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   10. LIGHTBOX MODAL (Penampil Foto Layar Penuh)
+   -------------------------------------------------------------------------- */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(24, 28, 32, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox-modal[data-open="true"] {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  object-fit: contain;
+}
+
+.lightbox-title {
+  color: #FFFFFF;
+  margin-top: 1rem;
+  font-size: var(--step-body);
+  font-weight: 600;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  color: #FFFFFF;
+  background: rgba(44, 53, 63, 0.8);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.lightbox-close:hover {
+  background: var(--accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   11. LOKASI & AKSES STRATEGIS (#lokasi)
+   -------------------------------------------------------------------------- */
+.lokasi-section {
+  background-color: var(--bg);
+}
+
+.lokasi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.lokasi-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lokasi-address-box {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.lokasi-address-box h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.lokasi-address-box p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.distance-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.distance-item {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.distance-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-subtle);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.distance-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.distance-text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+.distance-text p {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.map-container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.map-embed {
+  width: 100%;
+  height: 340px;
+  border: none;
+  background-color: var(--surface-subtle);
+}
+
+.map-footer {
+  padding: 1.25rem 1.75rem;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.map-footer span {
+  font-size: var(--step-small);
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   12. KONTAK & JAM SURVEI (#kontak)
+   -------------------------------------------------------------------------- */
+.kontak-section {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.kontak-card {
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.kontak-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kontak-heading {
+  font-size: var(--step-h2);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.kontak-desc {
+  font-size: var(--step-lead);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 52ch;
+  margin-bottom: 1.5rem;
+}
+
+.kontak-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.kontak-detail-item {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.kontak-detail-item .label {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.kontak-detail-item .value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.kontak-action-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.kontak-subnote {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. RESPONSIVE BREAKPOINTS (Desktop & Tablet)
+   -------------------------------------------------------------------------- */
+/* Tablet & Desktop Kecil (≥ 768px) */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .hero-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .kamar-card {
+    grid-template-columns: 1fr 1.1fr;
+  }
+
+  .kamar-visual {
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    aspect-ratio: auto;
+  }
+
+  .fasilitas-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clean-guarantee-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lokasi-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. ATURAN KOST & FAQ SECTION (#faq)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  background-color: var(--bg);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 820px;
+}
+
+.faq-item {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.faq-item[open] {
+  border-color: var(--accent);
+}
+
+.faq-question {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  user-select: none;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   15. FOOTER BERSIH (Tanpa Logo Gambar)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 4rem 1.5rem 2rem 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.footer-tagline {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 42ch;
+}
+
+.footer-heading {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+}
+
+.footer-contact-item {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.footer-contact-item strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.footer-bottom {
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.back-to-top:hover {
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   16. TOMBOL WHATSAPP MENGAMBANG (Floating Action Button)
+   -------------------------------------------------------------------------- */
+.floating-wa-wrap {
+  position: fixed;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  right: calc(1.5rem + env(safe-area-inset-right, 0px));
+  z-index: 100;
+}
+
+.floating-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--wa-green);
+  color: var(--ink);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(24, 28, 32, 0.16);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  min-height: 48px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.floating-wa-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(24, 28, 32, 0.22);
+  color: var(--ink);
+}
+
+.floating-wa-btn:active {
+  transform: translateY(0);
+}
+
+.floating-wa-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-wa-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.floating-wa-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   17. RESPONSIVE BREAKPOINTS (Desktop & Tablet)
+   -------------------------------------------------------------------------- */
+/* Tablet & Desktop Kecil (≥ 768px) */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .hero-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .kamar-card {
+    grid-template-columns: 1fr 1.1fr;
+  }
+
+  .kamar-visual {
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    aspect-ratio: auto;
+  }
+
+  .fasilitas-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clean-guarantee-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lokasi-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+  }
 }
 
 /* Desktop Penuh (≥ 1024px) */
@@ -491,4 +1511,15 @@ button {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 4.5rem;
   }
+
+  .kamar-card {
+    grid-template-columns: 1fr 1.15fr;
+  }
+
+  .kontak-card {
+    grid-template-columns: 1.25fr 0.75fr;
+    padding: 3rem 2.5rem;
+  }
 }
+
+

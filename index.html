@@ -38,10 +38,11 @@
         <!-- Daftar Menu Navigasi -->
         <ul class="nav-menu" id="navMenu">
           <li><a href="#beranda" class="nav-link">Beranda</a></li>
-          <li><a href="#kamar" class="nav-link">Kamar & Harga</a></li>
+          <li><a href="#kamar" class="nav-link">Kamar &amp; Harga</a></li>
           <li><a href="#fasilitas" class="nav-link">Fasilitas</a></li>
           <li><a href="#galeri" class="nav-link">Galeri</a></li>
           <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+          <li><a href="#faq" class="nav-link">Aturan &amp; FAQ</a></li>
         </ul>
 
         <!-- Tombol Aksi di Navbar -->
@@ -164,14 +165,754 @@
       </div>
     </section>
 
-    <!-- Placeholder Section berikutnya yang akan kita bangun di Sub-langkah 2, 3, dan 4:
-         - Section #kamar (Detail Kamar & Tarif)
-         - Section #fasilitas (Fasilitas Kamar & Bersama)
-         - Section #galeri (Galeri Foto & Filter Kategori)
-         - Section #lokasi (Alamat, Jarak Kampus, & Peta)
-         - Section #faq (Aturan Kost & Tanya Jawab)
-    -->
+    <!-- ========================================================================
+         3. DAFTAR KAMAR (#kamar) - Pilihan Kamar Seragam, Bersih & Transparan
+         ======================================================================== -->
+    <section id="kamar" class="section-padding kamar-section" aria-labelledby="kamarTitle">
+      <div class="container">
+        <!-- Judul Bagian Kamar -->
+        <div class="section-header">
+          <h2 id="kamarTitle" class="section-title">Pilihan Kamar Mahasiswa Siap Huni</h2>
+          <p class="section-desc">
+            Semua kamar di Kost Ramzah memiliki standar ukuran dan perabot seragam. Dilengkapi ventilasi jendela segar, kasur empuk, dan lemari pakaian pribadi.
+          </p>
+        </div>
+
+        <!-- Kartu Showcase Kamar Utama -->
+        <article class="kamar-card">
+          <!-- Kolom Foto Kamar -->
+          <div class="kamar-visual">
+            <img src="images/kamar/kamar-kost.svg" 
+                 alt="Interior kamar Kost Ramzah dengan kasur empuk, lemari pakaian, dan jendela sirkulasi udara baik"
+                 width="800" 
+                 height="600" 
+                 loading="lazy">
+            <div class="kamar-status-badge">
+              <span class="dot-live" aria-hidden="true"></span>
+              <span>Kamar Tersedia</span>
+            </div>
+          </div>
+
+          <!-- Kolom Detail & Pemesanan Kamar -->
+          <div class="kamar-body">
+            <div>
+              <span class="kamar-badge-type">Tipe Kamar Standar Mahasiswa</span>
+              <h3 class="kamar-heading">Kamar Pribadi Siap Pakai (Kasur + Lemari)</h3>
+              <p class="kamar-overview">
+                Ruangan bersih dan tenang dirancang khusus untuk kenyamanan istirahat dan fokus belajar mahasiswa. Sirkulasi udara lancar dengan pencahayaan alami yang baik.
+              </p>
+
+              <!-- Rincian Spesifikasi Kamar -->
+              <div class="kamar-specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Ukuran Kamar</span>
+                  <span class="spec-val">± 3 × 3.5 Meter</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Tempat Tidur</span>
+                  <span class="spec-val">Kasur Empuk Nyaman</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Penyimpanan</span>
+                  <span class="spec-val">Lemari Pakaian Rapi</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Ventilasi</span>
+                  <span class="spec-val">Jendela & Gorden</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <!-- Informasi Harga Bulanan yang Transparan -->
+              <div class="kamar-pricing-box">
+                <span class="kamar-price-num">Rp [XXX.000]</span>
+                <span class="kamar-price-period">/ bulan</span>
+                <span class="kamar-price-note">Termasuk Wi-Fi kencang dan pembersihan rutin harian area bersama.</span>
+              </div>
+
+              <!-- Tombol Aksi WhatsApp & Survei Langsung ke Bapak Kost -->
+              <div class="kamar-cta-group">
+                <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Bapak%20Kost%20Ramzah,%20saya%20tertarik%20dengan%20kamar%20kost%20dan%20ingin%20tanya%20informasi%20ketersediaan." 
+                   class="btn-primary"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Tanya ketersediaan kamar ke WhatsApp Bapak Kost">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/>
+                  </svg>
+                  <span>Pesan / Survei via WhatsApp</span>
+                </a>
+                <a href="#fasilitas" class="btn-secondary">
+                  Lihat Semua Fasilitas
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. FASILITAS KOST (#fasilitas) - Fasilitas Kamar, Fasilitas Bersama & Layanan
+         ======================================================================== -->
+    <section id="fasilitas" class="section-padding fasilitas-section" aria-labelledby="fasilitasTitle">
+      <div class="container">
+        <!-- Judul Bagian Fasilitas -->
+        <div class="section-header">
+          <h2 id="fasilitasTitle" class="section-title">Fasilitas Lengkap untuk Kebutuhan Mahasiswa</h2>
+          <p class="section-desc">
+            Kost Ramzah menyediakan fasilitas yang menunjang aktivitas perkuliahan, istirahat yang berkualitas, dan rasa aman bagi orang tua.
+          </p>
+        </div>
+
+        <!-- Kolom Dua Kategori Fasilitas -->
+        <div class="fasilitas-columns">
+          <!-- Grup 1: Fasilitas di Dalam Kamar -->
+          <div class="fasilitas-group">
+            <h3 class="fasilitas-group-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Fasilitas Kamar Pribadi</span>
+            </h3>
+            <ul class="fasilitas-list">
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"></path>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Kasur Empuk Berkualitas</h4>
+                  <p>Dilengkapi dipan kokoh dan sprei bersih untuk istirahat yang nyaman setelah seharian kuliah.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <line x1="12" y1="3" x2="12" y2="21"></line>
+                    <line x1="9" y1="10" x2="9.01" y2="10"></line>
+                    <line x1="15" y1="10" x2="15.01" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Lemari Pakaian Rapi</h4>
+                  <p>Lemari pakaian pribadi dengan ruang gantung baju dan rak pakaian lipat yang luas.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="12" y1="3" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Ventilasi & Jendela Udara Alami</h4>
+                  <p>Setiap kamar memiliki jendela langsung ke luar sehingga sirkulasi udara segar dan ruangan tidak pengap.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Stop Kontak Pribadi</h4>
+                  <p>Colokan listrik di posisi strategis untuk kemudahan mengisi daya laptop, HP, dan peralatan belajar.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Grup 2: Fasilitas Bersama & Keamanan -->
+          <div class="fasilitas-group">
+            <h3 class="fasilitas-group-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              <span>Fasilitas Bersama & Keamanan</span>
+            </h3>
+            <ul class="fasilitas-list">
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Wi-Fi Kecepatan Tinggi</h4>
+                  <p>Koneksi internet stabil dan kencang untuk kelancaran tugas kuliah, zoom meeting, dan hiburan.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>CCTV Keamanan 24 Jam</h4>
+                  <p>Kamera pengawas aktif di titik-titik strategis (pintu gerbang, lorong, dan parkiran) untuk menjamin rasa aman.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Dapur Bersama Siap Pakai</h4>
+                  <p>Tersedia kompor dan gas untuk memasak praktis, hemat biaya makan, dan ramah mahasiswa.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                    <line x1="5" y1="10" x2="19" y2="10"></line>
+                    <line x1="8" y1="6" x2="8.01" y2="6"></line>
+                    <line x1="8" y1="15" x2="8.01" y2="15"></line>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Kulkas Bersama</h4>
+                  <p>Fasilitas pendingin bersama untuk menyimpan minuman dingin, bahan makanan, dan lauk segar.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Area Parkir Motor Beratap</h4>
+                  <p>Parkiran motor terlindung dari terik matahari dan hujan, berada di dalam pagar kost yang aman.</p>
+                </div>
+              </li>
+
+              <li class="fasilitas-item">
+                <div class="fasilitas-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                  </svg>
+                </div>
+                <div class="fasilitas-text">
+                  <h4>Kamar Mandi / WC Jongkok Bersih</h4>
+                  <p>Kamar mandi dengan WC jongkok yang bersih, air bersih lancar setiap saat, dan terawat rutin.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Banner Jaminan Kebersihan Harian Oleh Pengelola -->
+        <div class="clean-guarantee-banner">
+          <div class="clean-guarantee-content">
+            <h3>Jaminan Kebersihan Area Bersama Setiap Hari</h3>
+            <p>
+              Kami mengutamakan kesehatan dan kenyamanan penghuni. Seluruh area bersama (lorong, dapur, teras, dan tempat sampah) selalu dibersihkan secara rutin setiap hari oleh pengelola langsung.
+            </p>
+          </div>
+          <div class="clean-guarantee-badge">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Dibersihkan Tiap Hari</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. GALERI FOTO (#galeri) - Dokumentasi Foto Kamar, Fasilitas & Suasana
+         ======================================================================== -->
+    <section id="galeri" class="section-padding galeri-section" aria-labelledby="galeriTitle">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="galeriTitle" class="section-title">Galeri Foto &amp; Suasana Kost</h2>
+          <p class="section-desc">
+            Dokumentasi autentik sudut kamar, fasilitas bersama, dan suasana hunian yang bersih serta kondusif bagi mahasiswa.
+          </p>
+        </div>
+
+        <!-- Tombol Filter Kategori Galeri -->
+        <div class="galeri-filter-bar" role="tablist" aria-label="Filter Kategori Foto">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Semua Foto</button>
+          <button class="filter-btn" data-filter="kamar" role="tab" aria-selected="false">Kamar Tidur</button>
+          <button class="filter-btn" data-filter="fasilitas" role="tab" aria-selected="false">Fasilitas Bersama</button>
+          <button class="filter-btn" data-filter="kegiatan" role="tab" aria-selected="false">Suasana &amp; Kegiatan</button>
+        </div>
+
+        <!-- Grid Koleksi Foto Galeri -->
+        <div class="galeri-grid" id="galeriGrid">
+          <!-- Foto 1: Kamar -->
+          <div class="galeri-item" data-category="kamar" data-title="Sudut Kamar Tidur &amp; Meja Belajar" tabindex="0" role="button" aria-label="Lihat foto Sudut Kamar Tidur">
+            <img src="images/galeri/galeri-kamar-1.svg" 
+                 alt="Foto sudut kamar Kost Ramzah dengan kasur dan meja belajar" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>Sudut Kamar Tidur</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+
+          <!-- Foto 2: Fasilitas Dapur -->
+          <div class="galeri-item" data-category="fasilitas" data-title="Dapur Bersama Bersih Siap Pakai" tabindex="0" role="button" aria-label="Lihat foto Dapur Bersama">
+            <img src="images/galeri/galeri-dapur.svg" 
+                 alt="Foto dapur bersama Kost Ramzah yang bersih dengan kompor dan wastafel" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>Dapur Bersama</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+
+          <!-- Foto 3: Fasilitas Parkir -->
+          <div class="galeri-item" data-category="fasilitas" data-title="Parkir Motor Beratap di Dalam Pagar" tabindex="0" role="button" aria-label="Lihat foto Parkir Motor">
+            <img src="images/galeri/galeri-parkir.svg" 
+                 alt="Foto area parkir motor beratap di dalam pagar Kost Ramzah" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>Parkir Motor Beratap</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+
+          <!-- Foto 4: Kegiatan Teras -->
+          <div class="galeri-item" data-category="kegiatan" data-title="Suasana Santai di Teras Kost" tabindex="0" role="button" aria-label="Lihat foto Suasana Teras">
+            <img src="images/galeri/galeri-kegiatan-1.svg" 
+                 alt="Foto suasana santai di teras Kost Ramzah yang asri" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>Suasana Santai Teras</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+
+          <!-- Foto 5: Kamar Lemari -->
+          <div class="galeri-item" data-category="kamar" data-title="Lemari Pakaian Rapi &amp; Ventilasi" tabindex="0" role="button" aria-label="Lihat foto Lemari Pakaian">
+            <img src="images/galeri/galeri-kamar-2.svg" 
+                 alt="Foto lemari pakaian kayu dan ventilasi kamar Kost Ramzah" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>Lemari Pakaian Rapi</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+
+          <!-- Foto 6: Fasilitas WC -->
+          <div class="galeri-item" data-category="fasilitas" data-title="Kamar Mandi &amp; WC Jongkok Bersih" tabindex="0" role="button" aria-label="Lihat foto Kamar Mandi">
+            <img src="images/galeri/galeri-wc.svg" 
+                 alt="Foto kamar mandi dan WC jongkok bersih Kost Ramzah" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>Kamar Mandi &amp; WC</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+
+          <!-- Foto 7: Fasilitas CCTV -->
+          <div class="galeri-item" data-category="fasilitas" data-title="Lorong Bersih &amp; CCTV Keamanan 24 Jam" tabindex="0" role="button" aria-label="Lihat foto CCTV 24 Jam">
+            <img src="images/galeri/galeri-cctv.svg" 
+                 alt="Foto lorong bersih dan CCTV 24 jam Kost Ramzah" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>CCTV Keamanan 24 Jam</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+
+          <!-- Foto 8: Kegiatan Belajar -->
+          <div class="galeri-item" data-category="kegiatan" data-title="Area Belajar Bersama Kondusif" tabindex="0" role="button" aria-label="Lihat foto Area Belajar">
+            <img src="images/galeri/galeri-kegiatan-2.svg" 
+                 alt="Foto area belajar bersama mahasiswa di Kost Ramzah" 
+                 width="600" 
+                 height="450" 
+                 loading="lazy">
+            <div class="galeri-caption-overlay">
+              <span>Area Belajar Tenang</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Muat Foto Lainnya (Pagination Ringan) -->
+        <div class="galeri-load-more-wrap">
+          <button id="loadMoreGallery" class="btn-secondary" aria-label="Tampilkan foto galeri lainnya">
+            Tampilkan Lebih Banyak Foto
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Lightbox (Penampil Foto Layar Penuh) -->
+    <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Penampil Foto Layar Penuh">
+      <div class="lightbox-content">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Tutup foto">&times;</button>
+        <img id="lightboxImg" class="lightbox-img" src="images/galeri/galeri-kamar-1.svg" alt="Pratinjau Foto Galeri Kost Ramzah">
+        <p id="lightboxTitle" class="lightbox-title">Sudut Kamar Tidur &amp; Meja Belajar</p>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         6. LOKASI STRATEGIS (#lokasi) - Akses Kampus & Petunjuk Arah Peta
+         ======================================================================== -->
+    <section id="lokasi" class="section-padding lokasi-section" aria-labelledby="lokasiTitle">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="lokasiTitle" class="section-title">Lokasi Strategis &amp; Akses Kampus</h2>
+          <p class="section-desc">
+            Berada di lingkungan pemukiman yang tenang, aman, dan sangat dekat dengan kampus serta kebutuhan harian mahasiswa.
+          </p>
+        </div>
+
+        <div class="lokasi-grid">
+          <!-- Kolom Informasi Alamat & Waktu Tempuh -->
+          <div class="lokasi-info">
+            <!-- Kotak Alamat Lengkap -->
+            <div class="lokasi-address-box">
+              <h3>Alamat Kost Ramzah</h3>
+              <p>
+                [Jl. Nama Jalan Kost No. XX, Kelurahan/Kecamatan, Kota/Kabupaten, Patokan Dekat Kampus]
+              </p>
+            </div>
+
+            <!-- Jarak ke Tempat Penting -->
+            <div class="distance-list">
+              <div class="distance-item">
+                <div class="distance-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <div class="distance-text">
+                  <h4>3 Menit ke Kampus</h4>
+                  <p>Sangat dekat, bisa jalan kaki atau motor.</p>
+                </div>
+              </div>
+
+              <div class="distance-item">
+                <div class="distance-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                </div>
+                <div class="distance-text">
+                  <h4>2 Menit ke Minimarket</h4>
+                  <p>Indomaret, Alfamart, dan ATM terdekat.</p>
+                </div>
+              </div>
+
+              <div class="distance-item">
+                <div class="distance-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  </svg>
+                </div>
+                <div class="distance-text">
+                  <h4>2 Menit ke Kuliner</h4>
+                  <p>Banyak warung makan ramah kantong.</p>
+                </div>
+              </div>
+
+              <div class="distance-item">
+                <div class="distance-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <div class="distance-text">
+                  <h4>5 Menit ke Halte / Angkutan</h4>
+                  <p>Akses transportasi umum mudah dijangkau.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Peta Interaktif -->
+          <div class="map-container">
+            <iframe class="map-embed" 
+                    title="Peta Lokasi Kost Ramzah"
+                    src="https://maps.google.com/maps?q=Universitas&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-footer">
+              <span>Navigasi langsung menggunakan Google Maps</span>
+              <a href="https://maps.google.com" 
+                 class="btn-secondary" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="Buka petunjuk arah di aplikasi Google Maps">
+                Buka di Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. KONTAK & JAM SURVEI (#kontak) - Ajakan Bertemu Langsung dengan Bapak Kost
+         ======================================================================== -->
+    <section id="kontak" class="section-padding kontak-section" aria-labelledby="kontakTitle">
+      <div class="container">
+        <div class="kontak-card">
+          <div class="kontak-info">
+            <h2 id="kontakTitle" class="kontak-heading">Siap Survei &amp; Memilih Kamar?</h2>
+            <p class="kontak-desc">
+              Bapak Kost siap menyambut kedatangan calon mahasiswa dan orang tua untuk melihat langsung kamar, fasilitas, dan lingkungan Kost Ramzah.
+            </p>
+
+            <div class="kontak-details">
+              <div class="kontak-detail-item">
+                <span class="label">WhatsApp Pengelola</span>
+                <span class="value">08xxxxxxxxxx (Bapak Kost)</span>
+              </div>
+              <div class="kontak-detail-item">
+                <span class="label">Jam Layanan Survei</span>
+                <span class="value">08.00 – 18.00 WIB (Tiap Hari)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="kontak-action-box">
+            <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Bapak%20Kost%20Ramzah,%20saya%20ingin%20membuat%20janji%20survei%20lokasi%20kamar%20kost." 
+               class="btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               aria-label="Chat WhatsApp Bapak Kost untuk survei lokasi">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/>
+              </svg>
+              <span>Jadwalkan Survei via WhatsApp</span>
+            </a>
+            <p class="kontak-subnote">Respons langsung dari pengelola Kost Ramzah</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. ATURAN KOST & FAQ (#faq) - Tata Tertib & Jawaban Pertanyaan Umum
+         ======================================================================== -->
+    <section id="faq" class="section-padding faq-section" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="faqTitle" class="section-title">Aturan Kost &amp; Pertanyaan Umum</h2>
+          <p class="section-desc">
+            Informasi penting seputar tata tertib hunian, fasilitas harian, dan kenyamanan bersama bagi seluruh mahasiswa penghuni Kost Ramzah.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <!-- FAQ 1: Jam Malam & Akses Kunci -->
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>Bagaimana ketentuan jam malam dan akses gerbang kost?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Setiap penghuni dibekali kunci gerbang masing-masing sehingga tetap leluasa saat harus pulang larut karena tugas kuliah atau praktikum. Penghuni diwajibkan untuk selalu menutup dan mengunci kembali gerbang serta menjaga ketenangan lingkungan malam hari.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 2: Biaya & Fasilitas Termasuk -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Apakah biaya sewa sudah termasuk fasilitas Wi-Fi dan kebersihan?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Ya, biaya sewa bulanan sudah mencakup seluruh fasilitas bersama: akses Wi-Fi kencang tanpa batas kuota, penggunaan dapur bersama dan kulkas, serta jaminan pembersihan area bersama (lorong, dapur, teras, tempat sampah) setiap hari oleh pengelola.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 3: Aturan Tamu -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Bagaimana aturan berkunjung bagi tamu atau rekan belajar?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Tamu atau rekan kelompok belajar diperkenankan berkunjung dan belajar bersama di area teras atau ruang bersama hingga batas wajar pukul 21.00 WIB demi menjaga privasi dan ketenangan istirahat seluruh penghuni kost lainnya.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 4: Peralatan Elektronik -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Apakah boleh membawa peralatan elektronik pribadi di kamar?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Peralatan elektronik standar kebutuhan kuliah seperti laptop, lampu meja belajar, kipas angin portabel, dan charger gawai bebas digunakan tanpa biaya tambahan. Penggunaan perangkat berdaya watt tinggi (seperti dispenser pemanas, rice cooker pribadi, atau setrika) mohon dikonfirmasikan terlebih dahulu dengan Bapak Kost.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 5: Cara Reservasi & Survei -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Bagaimana prosedur reservasi kamar atau janji temu survei?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Cukup hubungi Bapak Kost melalui tautan WhatsApp yang tersedia di website ini. Tentukan hari dan perkiraan jam survei (tersedia tiap hari antara 08.00 – 18.00 WIB). Bapak Kost akan mendampingi langsung untuk melihat kondisi kamar dan lingkungan.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- ========================================================================
+       9. FOOTER BERSIH (Tanpa Logo Gambar, Teks Sederhana & Navigasi Cepat)
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Kolom Brand & Komitmen Layanan -->
+        <div class="footer-col-brand">
+          <div class="footer-brand-title">KOST RAMZAH</div>
+          <p class="footer-tagline">
+            Hunian mahasiswa yang mengutamakan kebersihan harian, keamanan CCTV 24 jam, dan lingkungan tenang yang mendukung fokus belajar. Dikelola langsung dengan penuh perhatian.
+          </p>
+        </div>
+
+        <!-- Kolom Tautan Cepat -->
+        <div class="footer-col-nav">
+          <h3 class="footer-heading">Navigasi Halaman</h3>
+          <ul class="footer-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#kamar">Kamar &amp; Harga</a></li>
+            <li><a href="#fasilitas">Fasilitas Kost</a></li>
+            <li><a href="#galeri">Galeri Foto</a></li>
+            <li><a href="#lokasi">Lokasi Strategis</a></li>
+            <li><a href="#faq">Aturan &amp; FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom Kontak Langsung -->
+        <div class="footer-col-contact">
+          <h3 class="footer-heading">Kontak Pengelola</h3>
+          <p class="footer-contact-item">
+            <strong>Pengelola:</strong> Bapak Kost
+          </p>
+          <p class="footer-contact-item">
+            <strong>WhatsApp:</strong> 08xxxxxxxxxx
+          </p>
+          <p class="footer-contact-item">
+            <strong>Jam Survei:</strong> 08.00 – 18.00 WIB
+          </p>
+          <p class="footer-contact-item">
+            <strong>Alamat:</strong> [Jl. Nama Jalan Kost No. XX, Dekat Kampus]
+          </p>
+        </div>
+      </div>
+
+      <!-- Baris Bawah: Hak Cipta & Tombol Kembali ke Atas -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 Kost Ramzah. Seluruh hak cipta dilindungi.
+        </p>
+        <a href="#beranda" class="back-to-top" aria-label="Kembali ke bagian atas halaman">
+          <span>Kembali ke Atas</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       10. TOMBOL WHATSAPP MENGAMBANG (Floating Action Button)
+       ======================================================================== -->
+  <aside class="floating-wa-wrap" aria-label="Aksi Cepat WhatsApp">
+    <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Bapak%20Kost%20Ramzah,%20saya%20tertarik%20dengan%20kamar%20kost%20dan%20ingin%20tanya%20informasi%20ketersediaan."
+       class="floating-wa-btn"
+       id="floatingWaBtn"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat langsung dengan Bapak Kost via WhatsApp">
+      <span class="floating-wa-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/>
+        </svg>
+      </span>
+      <span class="floating-wa-text">Chat Bapak Kost</span>
+    </a>
+  </aside>
 
 </body>
 </html>

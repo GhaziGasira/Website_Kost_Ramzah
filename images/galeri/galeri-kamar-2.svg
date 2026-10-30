@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" role="img" aria-label="Foto lemari pakaian dan ventilasi kamar Kost Ramzah">
+  <defs>
+    <linearGradient id="gk2Wall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F4F7"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#gk2Wall)"/>
+  <rect y="350" width="600" height="100" fill="#E2E7EC"/>
+  <!-- Lemari Kayu Bersih -->
+  <rect x="180" y="50" width="240" height="320" rx="4" fill="#B8977E" stroke="#7D5F4A" stroke-width="2"/>
+  <line x1="300" y1="50" x2="300" y2="370" stroke="#7D5F4A" stroke-width="2"/>
+  <rect x="285" y="190" width="8" height="45" rx="2" fill="#2C353F"/>
+  <rect x="307" y="190" width="8" height="45" rx="2" fill="#2C353F"/>
+  <!-- Cermin di Pintu Lemari Kiri -->
+  <rect x="205" y="75" width="75" height="160" rx="2" fill="#EBF4F6" stroke="#CBD5DF" stroke-width="1.5"/>
+  <!-- Jendela Samping -->
+  <rect x="470" y="80" width="90" height="220" rx="3" fill="#EBF4F6" stroke="#CBD5DF" stroke-width="2"/>
+  <!-- Label Banner -->
+  <rect x="30" y="390" width="180" height="32" rx="4" fill="#2C353F"/>
+  <text x="120" y="411" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Lemari Pakaian Rapi</text>
+</svg>

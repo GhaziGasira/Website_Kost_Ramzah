@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" role="img" aria-label="Foto lorong bersih dan CCTV keamanan 24 jam Kost Ramzah">
+  <defs>
+    <linearGradient id="gcctvWall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EDF0F3"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#gcctvWall)"/>
+  <!-- Perspektif Lorong Kost Bersih -->
+  <polygon points="120,0 480,0 420,320 180,320" fill="#FFFFFF" stroke="#DFE5EB" stroke-width="2"/>
+  <polygon points="0,0 120,0 180,320 0,380" fill="#EDF0F3"/>
+  <polygon points="480,0 600,0 600,380 420,320" fill="#E2E7EC"/>
+  <!-- Lantai Lorong Mengkilap Bersih -->
+  <polygon points="0,380 180,320 420,320 600,380 600,450 0,450" fill="#CBD5DF"/>
+  <!-- Pintu-Pintu Kamar Rapi -->
+  <rect x="20" y="80" width="70" height="230" rx="3" fill="#B8977E" stroke="#8C6549" stroke-width="2"/>
+  <rect x="510" y="80" width="70" height="230" rx="3" fill="#B8977E" stroke="#8C6549" stroke-width="2"/>
+  <!-- Kamera CCTV di Plafon Sudut Kanan Atas -->
+  <circle cx="460" cy="45" r="16" fill="#181C20"/>
+  <rect x="445" y="45" width="30" height="15" rx="3" fill="#2C353F"/>
+  <circle cx="460" cy="55" r="4" fill="#25D366"/>
+  <!-- Label Banner -->
+  <rect x="30" y="390" width="180" height="32" rx="4" fill="#2C353F"/>
+  <text x="120" y="411" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Lorong Aman &amp; CCTV 24 Jam</text>
+</svg>
